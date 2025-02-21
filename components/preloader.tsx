@@ -27,11 +27,11 @@ export default function Preloader() {
           >
             <UtensilsCrossed 
               className="h-10 w-10 text-primary animate-bounce"
-              style={{ animationDelay: `${i * 0.2}s` }}
+              style={{ animationDelay: `${i * 0.3}s` }}
             />
             <ChefHat
               className="h-10 w-10 text-primary animate-bounce"
-              style={{ animationDelay: `${i * 0.2}s` }}
+              style={{ animationDelay: `${i * 0.3}s` }}
             />
           </div>
         ))}

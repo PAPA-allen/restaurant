@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { UtensilsCrossed ,ChefHat } from "lucide-react" // Importing fork and knife icons from lucide
 
 export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true)
@@ -17,16 +18,24 @@ export default function Preloader() {
 
   return (
     <div className="fixed inset-0 bg-white z-[9999] flex items-center justify-center">
-      <div className="flex gap-2">
+      <div className="flex gap-4">
         {[0, 1, 2].map((i) => (
-          <span
+          <div
             key={i}
-            className="h-8 w-8 rounded-full border-2 border-primary animate-bounce"
+            className="flex flex-col items-center"
             style={{ animationDelay: `${i * 0.2}s` }}
-          />
+          >
+            <UtensilsCrossed 
+              className="h-10 w-10 text-primary animate-bounce"
+              style={{ animationDelay: `${i * 0.2}s` }}
+            />
+            <ChefHat
+              className="h-10 w-10 text-primary animate-bounce"
+              style={{ animationDelay: `${i * 0.2}s` }}
+            />
+          </div>
         ))}
       </div>
     </div>
   )
 }
-

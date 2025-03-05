@@ -32,7 +32,6 @@ const Reservation: React.FC = () => {
     <section
       id="reservation"
       className="relative py-24 bg-cover bg-center"
-      style={{ backgroundImage: "url('/assets/restaurant-bg.jpg')" }}
     >
       <div className="absolute inset-0 bg-black opacity-60" /> {/* Dark overlay for contrast */}
       

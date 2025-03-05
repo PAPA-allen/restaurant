@@ -41,7 +41,7 @@ export default function Footer() {
               </li>
             </ul>
                   </nav> */}
-                  <p>Developed by <span><a href="https://portfolio-a8hp.onrender.com">Arcnile</a></span></p>
+                  <p>Developed by <span><a href="https://portfolio-a8hp.onrender.com">Allen ~Arcnile</a></span></p>
         </div>
           </div>
          

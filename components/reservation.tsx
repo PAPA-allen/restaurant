@@ -12,13 +12,13 @@ interface OpeningHour {
 }
 
 const openingHours: OpeningHour[] = [
-  { day: "Sunday", hours: "8:00 am – 11:00 pm" },
-  { day: "Monday", hours: "8:00 am – 11:00 pm" },
-  { day: "Tuesday", hours: "8:00 am – 11:00 pm" },
-  { day: "Wednesday", hours: "8:00 am – 11:00 pm" },
-  { day: "Thursday", hours: "8:00 am – 11:00 pm" },
-  { day: "Friday", hours: "Closed" },
-  { day: "Saturday", hours: "Closed" },
+  { day: "Sun", hours: "8:00 am – 11:00 pm" },
+  { day: "Mon", hours: "8:00 am – 11:00 pm" },
+  { day: "Tues", hours: "8:00 am – 11:00 pm" },
+  { day: "Wed", hours: "8:00 am – 11:00 pm" },
+  { day: "Thurs", hours: "8:00 am – 11:00 pm" },
+  { day: "Fri", hours: "Closed" },
+  { day: "Sat", hours: "Closed" },
 ];
 
 const Reservation: React.FC = () => {

@@ -26,6 +26,7 @@ const Reservation: React.FC = () => {
 
   const handleGuestChange = (value: string) => {
     setGuests(value);
+    
   };
 
   return (

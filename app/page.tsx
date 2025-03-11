@@ -45,7 +45,7 @@ export default function Home() {
             fill
             className="object-cover"
             priority
-            
+
           />
           <div className="absolute inset-0 gradient-overlay opacity-80" />
           <div className="container relative z-10 flex h-full flex-col items-center justify-center text-center">
@@ -87,19 +87,19 @@ export default function Home() {
                 name: "Truffle Risotto",
                 description: "Creamy Arborio rice with wild mushrooms and truffle oil",
                 price: "$24.95",
-                image: "/placeholder.svg?height=400&width=600",
+                image: "/1.png",
               },
               {
                 name: "Herb-Crusted Salmon",
                 description: "Fresh Atlantic salmon with a crispy herb crust and lemon butter sauce",
                 price: "$29.95",
-                image: "/placeholder.svg?height=400&width=600",
+                image: "/2.png",
               },
               {
                 name: "Chocolate Soufflé",
                 description: "Warm chocolate soufflé with vanilla bean ice cream",
                 price: "$12.95",
-                image: "/placeholder.svg?height=400&width=600",
+                image: "/3.png",
               },
             ].map((dish, index) => (
               <div
@@ -157,7 +157,7 @@ export default function Home() {
             </div>
             <div className="relative h-[400px] overflow-hidden rounded-lg">
               <Image
-                src="/placeholder.svg?height=800&width=600"
+                src="/assets/hero.png"
                 alt="Chef preparing food"
                 fill
                 className="object-cover"

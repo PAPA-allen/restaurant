@@ -82,23 +82,24 @@ export default function Home() {
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
+
             {[
               {
                 name: "Truffle Risotto",
                 description: "Creamy Arborio rice with wild mushrooms and truffle oil",
-                price: "$24.95",
+                price: "₵24.95",
                 image: "/1.png",
               },
               {
                 name: "Herb-Crusted Salmon",
                 description: "Fresh Atlantic salmon with a crispy herb crust and lemon butter sauce",
-                price: "$29.95",
+                price: "₵29.95",
                 image: "/2.png",
               },
               {
                 name: "Chocolate Soufflé",
                 description: "Warm chocolate soufflé with vanilla bean ice cream",
-                price: "$12.95",
+                price: "₵12.95",
                 image: "/3.png",
               },
             ].map((dish, index) => (

@@ -208,7 +208,7 @@ export default function MenuPage() {
             </div>
 
             <Tabs defaultValue="starters" className="w-full">
-              <TabsList className="mb-8 flex w-full flex-wrap justify-center gap-2 bg-secondary">
+              <TabsList className="mb-12 md:mb-8 flex w-full flex-wrap justify-center gap-2 bg-secondary s">
                 {menuCategories.map((category) => (
                   <TabsTrigger
                     key={category.id}

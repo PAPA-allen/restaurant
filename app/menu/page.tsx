@@ -204,7 +204,8 @@ export default function MenuPage() {
             <div className="mb-10 text-center">
               <h1 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Our Menu</h1>
               <div className="mx-auto mt-2 h-1 w-24 bg-primary"></div>
-              <p className="mt-4 text-muted-foreground">Crafted with passion using the finest seasonal ingredients</p>
+                          <p className="mt-4 text-muted-foreground">Crafted with passion using the finest seasonal ingredients</p>
+                          
             </div>
 
             <Tabs defaultValue="starters" className="w-full">

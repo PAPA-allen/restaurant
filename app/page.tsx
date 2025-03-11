@@ -45,6 +45,7 @@ export default function Home() {
             fill
             className="object-cover"
             priority
+            
           />
           <div className="absolute inset-0 gradient-overlay opacity-80" />
           <div className="container relative z-10 flex h-full flex-col items-center justify-center text-center">

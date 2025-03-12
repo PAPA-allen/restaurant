@@ -1,7 +1,10 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronRight, Clock, MapPin, Phone } from "lucide-react"
+import { ChevronRight, Clock, MapPin, Phone, PhoneIcon as WhatsApp } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
 
 export default function Home() {
   return (
@@ -39,35 +42,74 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative">
         <div className="relative h-[70vh] w-full overflow-hidden">
-          <Image
-            src="/assets/hero.png"
-            alt="Restaurant interior"
-            fill
-            className="object-cover"
-            priority
-
+          <Image src="/assets/hero.png" alt="Restaurant interior" fill className="object-cover" priority />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5 }}
+            className="absolute inset-0 gradient-overlay"
           />
-          <div className="absolute inset-0 gradient-overlay opacity-80" />
           <div className="container relative z-10 flex h-full flex-col items-center justify-center text-center">
-            <h1 className="font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-              Experience Culinary Excellence
-            </h1>
-            <p className="mt-6 max-w-md text-lg text-white/90">
-              Savor the finest ingredients prepared with passion and creativity at Savoria.
-            </p>
-            <div className="mt-10 flex gap-4">
-              <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
-                <Link href="/menu">View Our Menu</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-white bg-transparent text-white hover:bg-white/20"
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+              <motion.h1
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  type: "spring",
+                  stiffness: 100,
+                  delay: 0.2,
+                }}
+                className="font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl"
               >
-                <Link href="#reservation">Make a Reservation</Link>
-              </Button>
-            </div>
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                  className="block"
+                >
+                  Experience
+                </motion.span>{" "}
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.8, duration: 0.8 }}
+                  className="block text-gold"
+                >
+                  Culinary Excellence
+                </motion.span>
+              </motion.h1>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="mt-6 max-w-md text-lg text-white/90"
+            >
+              Savor the finest ingredients prepared with passion and creativity at Savoria.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.5 }}
+              className="mt-10 flex gap-4"
+            >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
+                  <Link href="/menu">View Our Menu</Link>
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-white bg-transparent text-white hover:bg-white/20"
+                >
+                  <Link href="#reservation">Make a Reservation</Link>
+                </Button>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -82,7 +124,6 @@ export default function Home() {
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
-
             {[
               {
                 name: "Truffle Risotto",
@@ -135,10 +176,25 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-wine py-16 text-white">
-        <div className="container">
+      <section id="about" className="bg-wine py-16 text-white relative overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.1 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0 bg-[url('/assets/hero.png')] bg-cover bg-center"
+        />
+        <div className="container relative z-10">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.8,
+                type: "spring",
+                stiffness: 100,
+              }}
+            >
               <h2 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl">Our Story</h2>
               <p className="mt-4 text-white/80">
                 Founded in 2010, Savoria began with a simple mission: to create memorable dining experiences through
@@ -152,18 +208,43 @@ export default function Home() {
                 We source our ingredients from local farmers and suppliers who share our commitment to quality and
                 sustainability.
               </p>
-              <Button className="mt-6 bg-gold text-wine hover:bg-gold/90" asChild>
-                <Link href="#contact">Get in Touch</Link>
-              </Button>
-            </div>
-            <div className="relative h-[400px] overflow-hidden rounded-lg">
-              <Image
-                src="/assets/hero.png"
-                alt="Chef preparing food"
-                fill
-                className="object-cover"
-              />
-            </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
+                <Button className="mt-6 bg-gold text-wine hover:bg-gold/90" asChild>
+                  <Link href="#contact">Get in Touch</Link>
+                </Button>
+              </motion.div>
+            </motion.div>
+            <motion.div
+  initial={{ opacity: 0, scale: 0.8 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{
+    duration: 0.8,
+    type: "spring",
+    stiffness: 100,
+  }}
+  className="relative h-[400px] w-full overflow-hidden rounded-lg shadow-2xl"
+>
+  <motion.div 
+    whileHover={{ scale: 1.05 }} 
+    transition={{ duration: 0.5 }} 
+    className="relative w-full h-full"
+  >
+    <Image 
+      src="/assets/hero.png" 
+      alt="Chef preparing food" 
+      layout="fill" 
+      objectFit="cover" 
+      className="z-10" 
+    />
+  </motion.div>
+</motion.div>
+
           </div>
         </div>
       </section>
@@ -285,37 +366,50 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="bg-muted py-16">
         <div className="container">
-          <div className="mx-auto max-w-2xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto max-w-2xl text-center"
+          >
             <h2 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl">Contact Us</h2>
             <p className="mt-4 text-muted-foreground">Have questions or feedback? We'd love to hear from you.</p>
-          </div>
+          </motion.div>
           <div className="mx-auto mt-10 grid max-w-4xl gap-8 md:grid-cols-3">
-            <div className="flex flex-col items-center rounded-lg border bg-background p-6 text-center shadow-sm">
-              <Phone className="mb-4 h-8 w-8 text-gold" />
-              <h3 className="text-lg font-medium">Phone</h3>
-              <p className="mt-2 text-muted-foreground">(123) 456-7890</p>
-            </div>
-            <div className="flex flex-col items-center rounded-lg border bg-background p-6 text-center shadow-sm">
-              <MapPin className="mb-4 h-8 w-8 text-gold" />
-              <h3 className="text-lg font-medium">Location</h3>
-              <p className="mt-2 text-muted-foreground">123 Culinary Ave, Foodville, CA 94123</p>
-            </div>
-            <div className="flex flex-col items-center rounded-lg border bg-background p-6 text-center shadow-sm">
-              <Clock className="mb-4 h-8 w-8 text-gold" />
-              <h3 className="text-lg font-medium">Hours</h3>
-              <p className="mt-2 text-muted-foreground">
-                Tue-Sun: 5:00 PM - 10:00 PM
-                <br />
-                Closed Mondays
-              </p>
-            </div>
+            {[
+              { icon: <Phone className="mb-4 h-8 w-8 text-gold" />, title: "Phone", content: "(123) 456-7890" },
+              {
+                icon: <MapPin className="mb-4 h-8 w-8 text-gold" />,
+                title: "Location",
+                content: "123 Culinary Ave, Foodville, CA 94123",
+              },
+              {
+                icon: <Clock className="mb-4 h-8 w-8 text-gold" />,
+                title: "Hours",
+                content: "Tue-Sun: 5:00 PM - 10:00 PM\nClosed Mondays",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex flex-col items-center rounded-lg border bg-background p-6 text-center shadow-sm"
+              >
+                {item.icon}
+                <h3 className="text-lg font-medium">{item.title}</h3>
+                <p className="mt-2 text-muted-foreground whitespace-pre-line">{item.content}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="border-t bg-background py-8">
-        <div className="container">
+        <div className="container relative">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex flex-col items-center gap-2 md:items-start">
               <Link href="/" className="font-serif text-xl font-bold">
@@ -336,6 +430,47 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* WhatsApp Icon - Fixed Position */}
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+          delay: 1,
+        }}
+        className="fixed bottom-6 right-6 z-50"
+      >
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="relative">
+          <motion.div
+            animate={{
+              scale: [1, 1.1, 1],
+              boxShadow: [
+                "0 0 0 0 rgba(37, 211, 102, 0.5)",
+                "0 0 0 10px rgba(37, 211, 102, 0)",
+                "0 0 0 0 rgba(37, 211, 102, 0)",
+              ],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "loop",
+            }}
+            className="absolute inset-0 rounded-full"
+          />
+          <Link
+            href="https://wa.me/1234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-white shadow-xl hover:bg-green-600 transition-all"
+            aria-label="Contact us on WhatsApp"
+          >
+            <WhatsApp className="h-8 w-8" />
+          </Link>
+        </motion.div>
+      </motion.div>
     </div>
   )
 }
